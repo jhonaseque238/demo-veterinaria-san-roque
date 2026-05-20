@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Veterinaria San Roque - Profesionales que cuidan a tu mascota</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Font Awesome para el logo de WhatsApp -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#cac7b8",
+                        "surface-dim": "#d0dbed",
+                        "on-primary-container": "#ffabc9",
+                        "primary-fixed-dim": "#ffb0cc",
+                        "on-tertiary-container": "#f5ba1d",
+                        "primary-container": "#99165a",
+                        "secondary-fixed": "#e6e3d3",
+                        "on-primary-fixed": "#3e0020",
+                        "surface-container-low": "#eff4ff",
+                        "error": "#ba1a1a",
+                        "surface-container-high": "#dee9fc",
+                        "tertiary-fixed-dim": "#f9bd22",
+                        "tertiary-container": "#684c00",
+                        "tertiary-fixed": "#ffdf9f",
+                        "primary-fixed": "#ffd9e4",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#121c2a",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#48473c",
+                        "outline": "#897178",
+                        "outline-variant": "#dcbfc7",
+                        "surface": "#f8f9ff",
+                        "on-secondary": "#ffffff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "inverse-primary": "#ffb0cc",
+                        "surface-variant": "#d9e3f6",
+                        "on-secondary-container": "#666558",
+                        "on-tertiary-fixed": "#261a00",
+                        "inverse-surface": "#27313f",
+                        "surface-container-highest": "#d9e3f6",
+                        "tertiary": "#4b3600",
+                        "on-primary-fixed-variant": "#8c0550",
+                        "on-primary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed": "#1c1c13",
+                        "surface-tint": "#ac2868",
+                        "on-background": "#121c2a",
+                        "primary": "#750041",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#605f53",
+                        "on-surface-variant": "#564148",
+                        "on-tertiary-fixed-variant": "#5c4300",
+                        "background": "#f8f9ff",
+                        "secondary-container": "#e6e3d3",
+                        "surface-bright": "#f8f9ff",
+                        "surface-container": "#e6eeff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "stack-md": "16px",
+                        "container-max": "1280px",
+                        "stack-sm": "8px",
+                        "stack-lg": "32px",
+                        "section-padding": "120px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Montserrat"],
+                        "display-lg": ["Montserrat"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-lg": ["40px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "display-lg": ["56px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-md": ["28px", { "lineHeight": "1.3", "fontWeight": "600" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0px 12px 32px rgba(153, 22, 90, 0.08);
+        }
+
+        .masonry-grid {
+            columns: 1;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .masonry-grid {
+                columns: 2;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .masonry-grid {
+                columns: 3;
+            }
+        }
+
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+    <!-- Emergency Floating Button -->
+    <a class="fixed bottom-8 right-8 z-[100] bg-[#25D366] text-white px-6 py-4 rounded-full shadow-lg flex items-center gap-2 hover:scale-105 transition-transform font-bold"
+        href="https://wa.me/5493541564714">
+        <i class="fab fa-whatsapp text-2xl"></i>
+        Urgencias
+    </a>
+    <!-- TopNavBar -->
+    <header
+        class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md shadow-[0px_4px_20px_rgba(153,22,90,0.04)] h-20">
+        <nav class="max-w-container-max mx-auto flex justify-between items-center h-full px-gutter">
+            <div class="flex items-center gap-3">
+                <img alt="Logo" class="w-10 h-10 rounded-full object-cover"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5lI9MjdZk7SoI1FfLVxHIAN9YkLZnyOV3hnQSVH5c5_je5JfML1CdPTFF4Ul85sTPR3B7lKrvToqiXBN8GuwwaRBL4YdJOHYLfWvmxRAeTUytvQ0UFSezvCDLj3JVoXc2wh20kipH_wY0JkM73HgUbyU8_7eEYWri5is8hVV_kCEj2CzjcP2tC0uok5SiD6sjP--Z_WETtOAs4x-43cOAVSvegJgwi-Bi7RTY_mNHi26OexG-_ZJ4BXcZJ_AZCqy4SWjhto3umq2W" />
+                <span class="font-headline-md text-headline-md font-bold text-primary">Veterinaria San Roque</span>
+            </div>
+            <div class="hidden md:flex items-center gap-stack-lg">
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors"
+                    href="#servicios">Servicios</a>
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors"
+                    href="#elegirnos">Por qué elegirnos</a>
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors"
+                    href="#testimonios">Testimonios</a>
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors"
+                    href="#galeria">Galería</a>
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors"
+                    href="#contacto">Contacto</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="https://wa.me/5493541564714"
+                    class="material-symbols-outlined text-primary cursor-pointer hover:scale-110 transition-transform">chat</a>
+                <a href="https://wa.me/5493541564714"
+                    class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-md text-label-md hover:opacity-90 transition-all active:scale-95 shadow-md">
+                    Reservar Turno
+                </a>
+            </div>
+        </nav>
+    </header>
+    <!-- Hero Section -->
+    <section class="relative pt-20 min-h-screen flex items-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent z-10"></div>
+            <!-- IMAGEN IA DETECTADA: Hero Clinic -->
+            <img alt="Hero Clinic" class="w-full h-full object-cover"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkJs_LajUXG-aFnk-Dz2Ooq_wuAJHvspjHS6OCS3xBCOdpVCf7fOt0rC8cF7gKehpuwL5oCVle81Itxj4Zc5_bNJeoqtLW-y4hEOvGHbYGPTfGRjcRJPesGkWYNKqEs0Xl4SPsjWg1HfnQpzYiLI1pvphpKrc_kHIlY88BKAtFEJVY93zg2W9Qdo6uXLCIonUTESQoKx40Cw9HJYmYlzFN4qTBp1piepFJPmg7_7L2bU0DJ7JtdLub5W3zzBZuHeXayYlZfpSEEzmX" />
+        </div>
+        <div class="relative z-20 max-w-container-max mx-auto px-gutter w-full py-section-padding">
+            <div class="max-w-2xl space-y-stack-lg">
+                <div
+                    class="inline-flex items-center gap-2 bg-primary-fixed/30 text-on-primary-fixed-variant px-4 py-1.5 rounded-full border border-primary-fixed-dim">
+                    <span class="material-symbols-outlined text-sm"
+                        style="font-variation-settings: 'FILL' 1;">pets</span>
+                    <span class="text-label-md font-bold tracking-wider uppercase">Cuidado Profesional de
+                        Excelencia</span>
+                </div>
+                <h1 class="font-display-lg text-display-lg text-primary md:text-[64px] leading-tight">
+                    Profesionales que cuidan a tu mascota como si fuera parte de su familia
+                </h1>
+                <p class="font-body-lg text-body-lg text-on-surface-variant opacity-90 max-w-xl">
+                    Atención veterinaria integral con rapidez, experiencia y calidad humana. Urgencias, cirugías y
+                    diagnóstico avanzado para la tranquilidad de tu hogar.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                    <a href="https://wa.me/5493541564714"
+                        class="bg-primary text-on-primary px-8 py-4 rounded-lg font-headline-md text-lg hover:shadow-xl transition-all hover:-translate-y-1 text-center">
+                        Reservar Turno
+                    </a>
+                    <a href="https://wa.me/5493541564714"
+                        class="border-2 border-primary text-primary px-8 py-4 rounded-lg font-headline-md text-lg hover:bg-primary/5 transition-all flex items-center justify-center gap-2">
+                        Hablar por WhatsApp
+                    </a>
+                </div>
+                <div class="flex items-center gap-4 pt-8 animate-bounce-slow">
+                    <img alt="Branding Puppy" class="w-16 h-16 rounded-2xl shadow-lg border-2 border-white object-cover"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5lI9MjdZk7SoI1FfLVxHIAN9YkLZnyOV3hnQSVH5c5_je5JfML1CdPTFF4Ul85sTPR3B7lKrvToqiXBN8GuwwaRBL4YdJOHYLfWvmxRAeTUytvQ0UFSezvCDLj3JVoXc2wh20kipH_wY0JkM73HgUbyU8_7eEYWri5is8hVV_kCEj2CzjcP2tC0uok5SiD6sjP--Z_WETtOAs4x-43cOAVSvegJgwi-Bi7RTY_mNHi26OexG-_ZJ4BXcZJ_AZCqy4SWjhto3umq2W" />
+                    <p class="text-on-surface-variant font-medium">Confianza humana en cada consulta</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Trust Indicators -->
+    <section class="bg-surface-container py-12">
+        <div class="max-w-container-max mx-auto px-gutter grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div class="flex flex-col items-center text-center gap-2 group">
+                <div
+                    class="w-14 h-14 bg-white rounded-full flex items-center justify-center text-primary shadow-sm group-hover:scale-110 transition-transform">
+                    <span class="material-symbols-outlined text-3xl"
+                        style="font-variation-settings: 'FILL' 1;">emergency</span>
+                </div>
+                <span class="font-bold text-on-surface">Urgencias</span>
+            </div>
+            <div class="flex flex-col items-center text-center gap-2 group">
+                <div
+                    class="w-14 h-14 bg-white rounded-full flex items-center justify-center text-primary shadow-sm group-hover:scale-110 transition-transform">
+                    <span class="material-symbols-outlined text-3xl"
+                        style="font-variation-settings: 'FILL' 1;">radiology</span>
+                </div>
+                <span class="font-bold text-on-surface">Rayos X y Ecografías</span>
+            </div>
+            <div class="flex flex-col items-center text-center gap-2 group">
+                <div
+                    class="w-14 h-14 bg-white rounded-full flex items-center justify-center text-primary shadow-sm group-hover:scale-110 transition-transform">
+                    <span class="material-symbols-outlined text-3xl"
+                        style="font-variation-settings: 'FILL' 1;">medical_services</span>
+                </div>
+                <span class="font-bold text-on-surface">Cirugías Complejas</span>
+            </div>
+            <div class="flex flex-col items-center text-center gap-2 group">
+                <div
+                    class="w-14 h-14 bg-white rounded-full flex items-center justify-center text-primary shadow-sm group-hover:scale-110 transition-transform">
+                    <span class="material-symbols-outlined text-3xl"
+                        style="font-variation-settings: 'FILL' 1;">groups</span>
+                </div>
+                <span class="font-bold text-on-surface">+1000 Familias</span>
+            </div>
+        </div>
+    </section>
+    <!-- Services Section -->
+    <section class="py-section-padding" id="servicios">
+        <div class="max-w-container-max mx-auto px-gutter">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div class="max-w-2xl">
+                    <h2 class="font-headline-lg text-headline-lg text-primary mb-4">Nuestros Servicios Médicos</h2>
+                    <p class="font-body-lg text-body-lg text-on-surface-variant">Contamos con equipamiento de última
+                        tecnología para brindar un diagnóstico preciso y tratamiento efectivo en un solo lugar.</p>
+                </div>
+                <div class="bg-tertiary-container text-tertiary-fixed px-6 py-3 rounded-2xl flex items-center gap-3">
+                    <span class="material-symbols-outlined">precision_manufacturing</span>
+                    <span class="font-bold">Alta Tecnología Médica</span>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Service Cards -->
+                <div
+                    class="service-card bg-white p-8 rounded-2xl transition-all duration-300 shadow-[0px_4px_20px_rgba(153,22,90,0.04)]">
+                    <span class="material-symbols-outlined text-4xl text-tertiary-fixed-dim mb-4">stethoscope</span>
+                    <h3 class="font-headline-md text-xl text-primary mb-2">Clínica Veterinaria</h3>
+                    <p class="text-on-surface-variant text-sm">Consultas generales y preventivas para todas las etapas
+                        de vida.</p>
+                </div>
+                <div
+                    class="service-card bg-white p-8 rounded-2xl transition-all duration-300 shadow-[0px_4px_20px_rgba(153,22,90,0.04)]">
+                    <span class="material-symbols-outlined text-4xl text-tertiary-fixed-dim mb-4">surgical</span>
+                    <h3 class="font-headline-md text-xl text-primary mb-2">Cirugías</h3>
+                    <p class="text-on-surface-variant text-sm">Quirófano propio totalmente equipado para intervenciones
+                        complejas.</p>
+                </div>
+                <div
+                    class="service-card bg-white p-8 rounded-2xl transition-all duration-300 shadow-[0px_4px_20px_rgba(153,22,90,0.04)]">
+                    <span
+                        class="material-symbols-outlined text-4xl text-tertiary-fixed-dim mb-4">settings_overscan</span>
+                    <h3 class="font-headline-md text-xl text-primary mb-2">Radiografías</h3>
+                    <p class="text-on-surface-variant text-sm">Diagnóstico por imagen digital de alta resolución
+                        instantáneo.</p>
+                </div>
+                <div
+                    class="service-card bg-white p-8 rounded-2xl transition-all duration-300 shadow-[0px_4px_20px_rgba(153,22,90,0.04)]">
+                    <span class="material-symbols-outlined text-4xl text-tertiary-fixed-dim mb-4">ear_sound</span>
+                    <h3 class="font-headline-md text-xl text-primary mb-2">Ecografías</h3>
+                    <p class="text-on-surface-variant text-sm">Estudios no invasivos para evaluación de órganos
+                        internos.</p>
+                </div>
+                <div
+                    class="service-card bg-white p-8 rounded-2xl transition-all duration-300 shadow-[0px_4px_20px_rgba(153,22,90,0.04)]">
+                    <span class="material-symbols-outlined text-4xl text-tertiary-fixed-dim mb-4">biotech</span>
+                    <h3 class="font-headline-md text-xl text-primary mb-2">Laboratorio</h3>
+                    <p class="text-on-surface-variant text-sm">Laboratorio propio para resultados rápidos en casos
+                        críticos.</p>
+                </div>
+                <div
+                    class="service-card bg-white p-8 rounded-2xl transition-all duration-300 shadow-[0px_4px_20px_rgba(153,22,90,0.04)]">
+                    <span class="material-symbols-outlined text-4xl text-tertiary-fixed-dim mb-4">orthopedics</span>
+                    <h3 class="font-headline-md text-xl text-primary mb-2">Traumatología</h3>
+                    <p class="text-on-surface-variant text-sm">Especialistas en lesiones óseas y rehabilitación
+                        articular.</p>
+                </div>
+                <div
+                    class="service-card bg-white p-8 rounded-2xl transition-all duration-300 shadow-[0px_4px_20px_rgba(153,22,90,0.04)]">
+                    <span class="material-symbols-outlined text-4xl text-tertiary-fixed-dim mb-4">home_health</span>
+                    <h3 class="font-headline-md text-xl text-primary mb-2">Internación</h3>
+                    <p class="text-on-surface-variant text-sm">Cuidado intensivo y monitoreo constante para pacientes
+                        delicados.</p>
+                </div>
+                <div
+                    class="service-card bg-white p-8 rounded-2xl transition-all duration-300 shadow-[0px_4px_20px_rgba(153,22,90,0.04)]">
+                    <span class="material-symbols-outlined text-4xl text-tertiary-fixed-dim mb-4">content_cut</span>
+                    <h3 class="font-headline-md text-xl text-primary mb-2">Peluquería Canina</h3>
+                    <p class="text-on-surface-variant text-sm">Estética profesional con productos de primera calidad
+                        dermatológica.</p>
+                </div>
+                <div
+                    class="service-card bg-white p-8 rounded-2xl transition-all duration-300 shadow-[0px_4px_20px_rgba(153,22,90,0.04)]">
+                    <span class="material-symbols-outlined text-4xl text-tertiary-fixed-dim mb-4">medication</span>
+                    <h3 class="font-headline-md text-xl text-primary mb-2">Farmacia</h3>
+                    <p class="text-on-surface-variant text-sm">Amplio stock de medicamentos veterinarios recetados.</p>
+                </div>
+                <div
+                    class="service-card bg-white p-8 rounded-2xl transition-all duration-300 shadow-[0px_4px_20px_rgba(153,22,90,0.04)]">
+                    <span class="material-symbols-outlined text-4xl text-tertiary-fixed-dim mb-4">nutrition</span>
+                    <h3 class="font-headline-md text-xl text-primary mb-2">Alimentos</h3>
+                    <p class="text-on-surface-variant text-sm">Líneas premium y medicadas para una nutrición balanceada.
+                    </p>
+                </div>
+                <div
+                    class="service-card bg-white p-8 rounded-2xl transition-all duration-300 shadow-[0px_4px_20px_rgba(153,22,90,0.04)]">
+                    <span class="material-symbols-outlined text-4xl text-tertiary-fixed-dim mb-4">local_shipping</span>
+                    <h3 class="font-headline-md text-xl text-primary mb-2">Envíos</h3>
+                    <p class="text-on-surface-variant text-sm">Entrega a domicilio de alimentos y productos de farmacia.
+                    </p>
+                </div>
+                <div
+                    class="service-card bg-primary p-8 rounded-2xl transition-all duration-300 shadow-xl border border-primary-container">
+                    <span class="material-symbols-outlined text-4xl text-white mb-4"
+                        style="font-variation-settings: 'FILL' 1;">e911_emergency</span>
+                    <h3 class="font-headline-md text-xl text-white mb-2">Urgencias</h3>
+                    <p class="text-primary-fixed text-sm">Atención inmediata durante horarios de apertura.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Why Choose Us -->
+    <section class="bg-secondary-container py-section-padding" id="elegirnos">
+        <div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 lg:grid-cols-2 gap-stack-lg items-center">
+            <div class="relative">
+                <div class="absolute -top-10 -left-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl"></div>
+                <div class="relative overflow-hidden rounded-[40px] shadow-2xl">
+                    <!-- IMAGEN IA DETECTADA: Veterinarian with Golden Retriever -->
+                    <img class="w-full h-full object-cover aspect-square" src="imagen1-prop.png" />
+                </div>
+            </div>
+            <div class="lg:pl-12 space-y-8">
+                <h2 class="font-headline-lg text-headline-lg text-on-surface">¿Por qué confiar en nosotros?</h2>
+                <div class="space-y-6">
+                    <div class="flex gap-4">
+                        <div
+                            class="w-12 h-12 bg-primary/10 flex-shrink-0 rounded-full flex items-center justify-center text-primary">
+                            <span class="material-symbols-outlined">schedule</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-1">Atención profesional</h4>
+                            <p class="text-on-surface-variant">Contamos con un equipo altamente capacitado para brindar
+                                la mejor atención a tu mascota.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div
+                            class="w-12 h-12 bg-primary/10 flex-shrink-0 rounded-full flex items-center justify-center text-primary">
+                            <span class="material-symbols-outlined">medical_information</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-1">Equipamiento completo en el local</h4>
+                            <p class="text-on-surface-variant">Realizamos todos los estudios aquí mismo. Menos traslados
+                                significan diagnósticos más ágiles.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div
+                            class="w-12 h-12 bg-primary/10 flex-shrink-0 rounded-full flex items-center justify-center text-primary">
+                            <span class="material-symbols-outlined">favorite</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-1">Calidad humana excepcional</h4>
+                            <p class="text-on-surface-variant">Tratamos a cada animal con la paciencia y el cariño que
+                                se merece, como si fuera nuestro.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div
+                            class="w-12 h-12 bg-primary/10 flex-shrink-0 rounded-full flex items-center justify-center text-primary">
+                            <span class="material-symbols-outlined">analytics</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg mb-1">Diagnósticos ágiles y precisos</h4>
+                            <p class="text-on-surface-variant">Nuestros especialistas utilizan tecnología de vanguardia
+                                para asegurar el tratamiento correcto.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonials -->
+    <section class="py-section-padding overflow-hidden" id="testimonios">
+        <div class="max-w-container-max mx-auto px-gutter">
+            <h2 class="font-headline-lg text-headline-lg text-center text-primary mb-16">Historias que nos inspiran</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial Cards -->
+                <div
+                    class="bg-white p-10 rounded-3xl shadow-[0px_12px_32px_rgba(153,22,90,0.06)] border border-primary/5 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-tertiary-fixed-dim mb-6">
+                            <span class="material-symbols-outlined"
+                                style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined"
+                                style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined"
+                                style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined"
+                                style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined"
+                                style="font-variation-settings: 'FILL' 1;">star</span>
+                        </div>
+                        <p class="font-body-lg text-on-surface italic mb-8">"Excelente atención, salvaron a mi perrito
+                            cuando ya no sabíamos qué hacer. Eternamente agradecidos con todo el equipo."</p>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">
+                            ML</div>
+                        <div>
+                            <p class="font-bold">María Luz</p>
+                            <p class="text-xs text-on-surface-variant">Dueña de 'Boby'</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="bg-white p-10 rounded-3xl shadow-[0px_12px_32px_rgba(153,22,90,0.06)] border border-primary/5 flex flex-col justify-between transform md:translate-y-6">
+                    <div>
+                        <div class="flex text-tertiary-fixed-dim mb-6">
+                            <span class="material-symbols-outlined"
+                                style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined"
+                                style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined"
+                                style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined"
+                                style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined"
+                                style="font-variation-settings: 'FILL' 1;">star</span>
+                        </div>
+                        <p class="font-body-lg text-on-surface italic mb-8">"Trato humano y profesional en momentos muy
+                            difíciles. Su equipo de traumatología es de lo mejor. Recuperó su caminar."</p>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">
+                            JP</div>
+                        <div>
+                            <p class="font-bold">Juan Pablo</p>
+                            <p class="text-xs text-on-surface-variant">Dueño de 'Luna'</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="bg-white p-10 rounded-3xl shadow-[0px_12px_32px_rgba(153,22,90,0.06)] border border-primary/5 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-tertiary-fixed-dim mb-6">
+                            <span class="material-symbols-outlined"
+                                style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined"
+                                style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined"
+                                style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined"
+                                style="font-variation-settings: 'FILL' 1;">star</span>
+                            <span class="material-symbols-outlined"
+                                style="font-variation-settings: 'FILL' 1;">star</span>
+                        </div>
+                        <p class="font-body-lg text-on-surface italic mb-8">"Llevamos a nuestras 3 mascotas. Siempre nos
+                            atienden con una sonrisa y una profesionalidad que nos da mucha paz. Súper recomendados."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">
+                            RC</div>
+                        <div>
+                            <p class="font-bold">Ricardo C.</p>
+                            <p class="text-xs text-on-surface-variant">Dueño de 'Mimi', 'Toby' y 'Coco'</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Gallery Section -->
+    <section class="py-section-padding bg-surface-container-low" id="galeria">
+        <div class="max-w-container-max mx-auto px-gutter">
+            <h2 class="font-headline-lg text-headline-lg text-center text-primary mb-12">Nuestra Clínica por dentro</h2>
+            <div class="masonry-grid">
+                <div class="masonry-item rounded-3xl overflow-hidden shadow-lg hover:opacity-90 transition-opacity">
+                    <!-- IMAGEN IA DETECTADA: Examination Room -->
+                    <img class="w-full h-full object-cover" src="Imagen3-cliente.png" />
+                </div>
+                <div class="masonry-item rounded-3xl overflow-hidden shadow-lg hover:opacity-90 transition-opacity">
+                    <!-- IMAGEN IA DETECTADA: Vet with Bichon Frise -->
+                    <img class="w-full h-full object-cover" src="Imagen9-delprop.png" />
+                </div>
+                <div class="masonry-item rounded-3xl overflow-hidden shadow-lg hover:opacity-90 transition-opacity">
+                    <!-- IMAGEN IA DETECTADA: German Shepherd -->
+                    <img class="w-full h-full object-cover" src="Imagen8-cliente.png" />
+                </div>
+                <div class="masonry-item rounded-3xl overflow-hidden shadow-lg hover:opacity-90 transition-opacity">
+                    <!-- IMAGEN IA DETECTADA: Reception Area -->
+                    <img class="w-full h-full object-cover" src="Imagen5-cliente.png" />
+                </div>
+                <div class="masonry-item rounded-3xl overflow-hidden shadow-lg hover:opacity-90 transition-opacity">
+                    <!-- IMAGEN IA DETECTADA: X-ray Equipment -->
+                    <img class="w-full h-full object-cover" src="Imagen2-prop.png" />
+                </div>
+                <div class="masonry-item rounded-3xl overflow-hidden shadow-lg hover:opacity-90 transition-opacity">
+                    <!-- IMAGEN IA DETECTADA: Staff with Pets -->
+                    <img class="w-full h-full object-cover" src="Imagen4-cliente.png" />
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact & Location -->
+    <section class="py-section-padding" id="contacto">
+        <div class="max-w-container-max mx-auto px-gutter">
+            <div class="bg-white rounded-[40px] shadow-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2">
+                <div class="p-12 lg:p-20 space-y-8">
+                    <h2 class="font-headline-lg text-headline-lg text-primary">Contáctanos ahora</h2>
+                    <p class="text-body-lg text-on-surface-variant">Estamos aquí para ayudarte a ti y a tu mascota. Ven
+                        a conocernos o escríbenos por cualquier consulta.</p>
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <span class="material-symbols-outlined text-primary mt-1">location_on</span>
+                            <div>
+                                <p class="font-bold text-lg">Nuestra Clínica</p>
+                                <p class="text-on-surface-variant">Av. Ramón J. Cárcano 2285 local 1, X5152 Villa Carlos
+                                    Paz, Córdoba</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <span class="material-symbols-outlined text-primary mt-1">schedule</span>
+                            <div>
+                                <p class="font-bold text-lg">Horarios de Atención</p>
+                                <div class="text-on-surface-variant text-sm space-y-1">
+                                    <p>Miércoles a Viernes: 9:30 a.m. – 1 p.m. | 5 – 9 p.m.</p>
+                                    <p>Sábado: 9:30 a.m. – 1:30 p.m. | 5:30 – 8 p.m.</p>
+                                    <p>Lunes y Martes: 9:30 a.m. – 1 p.m. | 5 – 9 p.m.</p>
+                                    <p>Domingo: Cerrado</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <span class="material-symbols-outlined text-primary mt-1">call</span>
+                            <div>
+                                <p class="font-bold text-lg">Teléfono Directo</p>
+                                <p class="text-on-surface-variant">03541 564714</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-6">
+                        <a class="inline-flex items-center gap-4 bg-[#25D366] text-white px-10 py-5 rounded-2xl font-bold text-lg shadow-lg hover:scale-105 transition-transform"
+                            href="https://wa.me/5493541564714">
+                            <i class="fab fa-whatsapp text-3xl"></i>
+                            WhatsApp de Urgencias
+                        </a>
+                    </div>
+                </div>
+                <div class="min-h-[400px] relative bg-surface-container">
+                    <!-- Mapa Real de Google Maps -->
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3405.023456789!2d-64.495!3d-31.425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x942d66444444444b%3A0x4444444444444444!2sAv.%20Ram%C3%B3n%20J.%20C%C3%A1rcano%202285%2C%20X5152%20Villa%20Carlos%20Paz%2C%20C%C3%B3rdoba!5e0!3m2!1ses-419!2sar!4v1716220000000!5m2!1ses-419!2sar"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-inverse-surface text-surface py-section-padding">
+        <div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-3 gap-stack-lg">
+            <div class="space-y-6">
+                <div class="flex items-center gap-3">
+                    <img alt="Logo" class="w-12 h-12 rounded-full border-2 border-primary object-cover"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5lI9MjdZk7SoI1FfLVxHIAN9YkLZnyOV3hnQSVH5c5_je5JfML1CdPTFF4Ul85sTPR3B7lKrvToqiXBN8GuwwaRBL4YdJOHYLfWvmxRAeTUytvQ0UFSezvCDLj3JVoXc2wh20kipH_wY0JkM73HgUbyU8_7eEYWri5is8hVV_kCEj2CzjcP2tC0uok5SiD6sjP--Z_WETtOAs4x-43cOAVSvegJgwi-Bi7RTY_mNHi26OexG-_ZJ4BXcZJ_AZCqy4SWjhto3umq2W" />
+                    <span class="font-headline-md text-headline-md font-bold text-white">Veterinaria San Roque</span>
+                </div>
+                <p class="text-surface-dim font-body-md">Líderes en cuidado veterinario de alta complejidad. Combinamos
+                    tecnología de punta con la calidez humana que tu mascota merece.</p>
+                <div class="flex gap-4">
+                    <a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors"
+                        href="#">
+                        <i class="fab fa-facebook-f text-white"></i>
+                    </a>
+                    <a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors"
+                        href="#">
+                        <i class="fab fa-instagram text-white"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="space-y-6">
+                <h4 class="font-headline-md text-xl text-white">Enlaces Rápidos</h4>
+                <ul class="space-y-4">
+                    <li><a class="text-surface-dim hover:text-white hover:underline transition-all"
+                            href="#servicios">Nuestros Servicios</a></li>
+                    <li><a class="text-surface-dim hover:text-white hover:underline transition-all"
+                            href="#elegirnos">Por qué confiar</a></li>
+                    <li><a class="text-surface-dim hover:text-white hover:underline transition-all"
+                            href="#testimonios">Testimonios</a></li>
+                    <li><a class="text-surface-dim hover:text-white hover:underline transition-all"
+                            href="#contacto">Ubicación</a></li>
+                </ul>
+            </div>
+            <div class="space-y-6">
+                <h4 class="font-headline-md text-xl text-white">Contacto</h4>
+                <ul class="space-y-4">
+                    <li class="text-surface-dim">Av. Ramón J. Cárcano 2285</li>
+                    <li class="text-surface-dim">Villa Carlos Paz, Córdoba</li>
+                    <li class="text-surface-dim">Tel: 03541 564714</li>
+                </ul>
+                <p class="text-surface-dim text-sm pt-4">© 2024 Veterinaria San Roque. Todos los derechos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Smooth scroll for anchors
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Simple animation on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.service-card, .masonry-item').forEach(el => {
+            el.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-700');
+            observer.observe(el);
+        });
+    </script>
+</body>
+
+</html>
